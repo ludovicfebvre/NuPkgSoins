@@ -1,4 +1,9 @@
-﻿
+﻿//-----------------------------------------------------------------------
+// <copyright file="IntervenantExterne.cs" company="FEBVRE">
+// All rights reserved.
+// </copyright>
+// <author>Ludovic FEBVRE</author>
+//-----------------------------------------------------------------------
 namespace TpSoins
 {
     using System;
@@ -7,20 +12,35 @@ namespace TpSoins
     using System.Text;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Classe IntervenantExterne
+    /// Classe Heritière de la classe Intervenant
+    /// </summary>
     public class IntervenantExterne : Intervenant
     {
+        /// <summary>
+        /// Chaine de caractères
+        /// </summary>
         private string specialite;
+
+        /// <summary>
+        /// Chaine de caractères
+        /// </summary>
         private string adresse;
+
+        /// <summary>
+        /// Chaine de caractères
+        /// </summary>
         private string tel;
 
         /// <summary>
-        /// Constructeur de la classe Intervenant Externe
+        /// Initialise une nouvelle instance de la classe IntervenantExterne.
         /// </summary>
-        /// <param name="unNom"></param>
-        /// <param name="unPrenom"></param>
-        /// <param name="uneSpecialite"></param>
-        /// <param name="uneAdresse"></param>
-        /// <param name="unTel"></param>
+        /// <param name="unNom">Chaine de caractère unNom</param>
+        /// <param name="unPrenom">Chaine de caractère unPrenom</param>
+        /// <param name="uneSpecialite">Chaine de caractère uneSpecialite</param>
+        /// <param name="uneAdresse">Chaine de caractère uneAdresse</param>
+        /// <param name="unTel">Chaine de caractère unTel</param>
         public IntervenantExterne(string unNom, string unPrenom, string uneSpecialite, string uneAdresse, string unTel) : base(unNom, unPrenom)
         {
             this.specialite = uneSpecialite;
@@ -31,8 +51,8 @@ namespace TpSoins
         /// <summary>
         /// Accesseur sur le string specialite
         /// </summary>
-        /// <returns></returns>
-        public string getSpecialite()
+        /// <returns>Retourne Chaine de caractères</returns>
+        public string GetSpecialite()
         {
             return this.specialite;
         }
@@ -40,8 +60,8 @@ namespace TpSoins
         /// <summary>
         /// Accesseur sur le string adresse
         /// </summary>
-        /// <returns></returns>
-        public string getAdresse()
+        /// <returns>Retourne Chaine de caractères</returns>
+        public string GetAdresse()
         {
             return this.adresse;
         }
@@ -49,8 +69,8 @@ namespace TpSoins
         /// <summary>
         /// Accesseur sur le string tel
         /// </summary>
-        /// <returns></returns>
-        public string getTel()
+        /// <returns>Retourne chaine de caractères</returns>
+        public string GetTel()
         {
             return this.tel;
         }
@@ -58,10 +78,10 @@ namespace TpSoins
         /// <summary>
         /// Affiche les elements de la classe Intervenant Externe
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne chaine de caractères</returns>
         public override string ToString()
         {
-            return base.ToString() + " Spécialité " + specialite + "\n               " + adresse + " - " + tel;
+            return base.ToString() + " Spécialité " + this.specialite + "\n               " + this.adresse + " - " + this.tel;
         }
     }
 }

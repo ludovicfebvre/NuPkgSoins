@@ -1,5 +1,9 @@
-﻿
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Prestation.cs" company="FEBVRE">
+// All rights reserved.
+// </copyright>
+// <author>Ludovic FEBVRE</author>
+//-----------------------------------------------------------------------
 namespace TpSoins
 {
     using System;
@@ -7,39 +11,53 @@ namespace TpSoins
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
+    /// <summary>
+    /// Classe Prestation
+    /// </summary>
     public class Prestation
     {
+        /// <summary>
+        /// Chaine de caractère
+        /// </summary>
         private string libelle;
-        private DateTime dateSoin;
-        private Intervenant l_Intervenant;
 
         /// <summary>
-        /// Constructeur de la classe Prestation
+        /// Objet de type DateTime
         /// </summary>
-        /// <param name="unLibelle"></param>
-        /// <param name="uneDate"></param>
-        /// <param name="unIntervenant"></param>
+        private DateTime dateSoin;
+
+        /// <summary>
+        /// Objet de type Intervenant
+        /// </summary>
+        private Intervenant unIntervenant;
+
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe Prestation.
+        /// </summary>
+        /// <param name="unLibelle">Chaine de caractères unLibelle</param>
+        /// <param name="uneDate">Objet de type DateTime</param>
+        /// <param name="unIntervenant">Objet de type Intervenant</param>
         public Prestation(string unLibelle, DateTime uneDate, Intervenant unIntervenant)
         {
             this.libelle = unLibelle;
             this.dateSoin = uneDate;
-            this.l_Intervenant = unIntervenant;
-
-
+            this.unIntervenant = unIntervenant;
         }
 
         /// <summary>
-        /// Fonction qui compare 2 dates de prestations
+        /// Compare les dates
         /// </summary>
-        /// <param name="unePrestation"></param>
-        /// <returns>int</returns>
-        public int compareTo(Prestation unePrestation)
+        /// <param name="unePrestation">Objet de type Prestation</param>
+        /// <returns>Retourne un entier compris entre -1 et 1.</returns>
+        public int CompareTo(Prestation unePrestation)
         {
-            if (this.dateSoin.Equals(unePrestation.getDateSoin()))
+            if (this.dateSoin.Equals(unePrestation.GetDateSoin()))
             {
                 return 0;
             }
-            else if (this.dateSoin>unePrestation.getDateSoin()){
+            else if (this.dateSoin > unePrestation.GetDateSoin())
+            {
                 return 1;
             }
             else
@@ -51,26 +69,30 @@ namespace TpSoins
         /// <summary>
         /// Accesseur sur le DateTime datesoin
         /// </summary>
-        /// <returns></returns>
-        public DateTime getDateSoin()
+        /// <returns>Retourne dateSoin</returns>
+        public DateTime GetDateSoin()
         {
             return this.dateSoin;
         }
 
-        public Intervenant getL_Intervenant()
+        /// <summary>
+        /// Accesseur sur unIntervenant
+        /// </summary>
+        /// <returns>Retourne unIntervenant</returns>
+        public Intervenant GetL_Intervenant()
         {
-            return this.l_Intervenant;
+            return this.unIntervenant;
         }
         
         /// <summary>
         /// Affiche les elements de la classe prestation
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retourne une chaines de caractères</returns>
         public override string ToString()
         {
-            string prestation = libelle + " - " + dateSoin.Day + "/" + dateSoin.Month + "/";
-            prestation += +dateSoin.Year + " " + dateSoin.Hour + ":" + dateSoin.Minute + ":" + dateSoin.Second + " - ";
-            prestation += "Intervenant : Dr" + l_Intervenant.ToString() + "\n";
+            string prestation = this.libelle + " - " + this.dateSoin.Day + "/" + this.dateSoin.Month + "/";
+            prestation += this.dateSoin.Year + " " + this.dateSoin.Hour + ":" + this.dateSoin.Minute + ":" + this.dateSoin.Second + " - ";
+            prestation += "Intervenant : Dr" + this.unIntervenant.ToString() + "\n";
             return prestation;
         }
     }
