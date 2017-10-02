@@ -1,17 +1,24 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TpSoins;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="PrestationTests.cs" company="FEBVRE">
+// All rights reserved.
+// </copyright>
+// <author>Ludovic FEBVRE</author>
+//-----------------------------------------------------------------------
 namespace TpSoins
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using System.Linq;
+    using System.Text;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+    /// <summary>
+    /// Classe PrestationTests
+    /// </summary>
     [TestClass()]
     public class PrestationTests
     {
-
         [TestMethod()]
         public void CompareToTest()
         {

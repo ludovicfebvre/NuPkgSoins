@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
+    <Authors>Ludovic FEBVRE</Authors>
+    <Company>SlamFEBVRE</Company>
+    <PackageId>NuPkgSoins</PackageId>
+    <Description>Le paquet fournit un ensemble de classes pour la gestion d'un centre médical.</Description>
+    <Product>SoinsNuget</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net461\NuPkgSoins.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
